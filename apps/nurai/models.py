@@ -1,12 +1,16 @@
 from django.db import models
 
 
-class Nurai(models.Model):
-    title = models.CharField(max_length=100, verbose_name='Название')
+class Student(models.Model):
+    name = models.CharField(max_length=100, verbose_name='Имя')
+    age = models.IntegerField(verbose_name='Возраст')
+    city = models.CharField(max_length=100, verbose_name='Город')
+    email = models.EmailField(verbose_name='Email')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
 
     def __str__(self):
-        return self.title
+        return self.name
 
     class Meta:
-        verbose_name = 'Нурай'
-        verbose_name_plural = 'Нураи'
+        verbose_name = 'Студент'
+        verbose_name_plural = 'Студенты'
